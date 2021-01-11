@@ -46,8 +46,6 @@
 
       $post = Postagem::selecionaPorId($paramId);
 
-
-
       $parametros = array();
       $parametros['id'] = $post->id;
       $parametros['titulo'] = $post->titulo;

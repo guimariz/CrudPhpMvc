@@ -34,12 +34,13 @@
 
       $resultado = $sql->fetchObject('Postagem');
 
-      if(!$resultado) {
-        throw new Exception("Não foi encontrado nenhum registro no banco.");
-      } else {
-        $resultado->comentarios = Comentario::selecionarComentarios($resultado->id);
-        
-      }
+      var_dump($resultado);
+
+      // if(!$resultado) {
+      //   throw new Exception("Não foi encontrado nenhum registro no banco.");
+      // } else {
+      //   $resultado->comentarios = Comentario::selecionarComentarios($resultado->id);
+      // }
 
       return $resultado;
     }
@@ -84,7 +85,7 @@
         
         return false;
       }
-      
+
       return true;
     }
 
