@@ -1,0 +1,13 @@
+<div class="section">
+  <h1>Postagens:</h1>
+  {% for postagem in postagens %}
+  <article>
+    <h2>
+      <a href="http://localhost/phpmvccrud/?pagina=post&id={{postagem.id}}"
+        >{{postagem.titulo}}</a
+      >
+    </h2>
+    <p>{{postagem.conteudo}} | {{postagem.id}}</p>
+  </article>
+  {% endfor %}
+</div>

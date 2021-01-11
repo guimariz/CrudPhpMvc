@@ -1,0 +1,31 @@
+<h1>Gerenciador de Conteúdo</h1>
+
+<a href="http://localhost/phpmvccrud/?pagina=admin&metodo=create"
+  >Criar Publicação</a
+>
+<br />
+<br />
+<hr />
+<br />
+<table border="2">
+  <tr>
+    <th>ID</th>
+    <th>Título</th>
+    <th>Alteração</th>
+    <th>Deleção</th>
+  </tr>
+
+  {% for postagem in postagens %}
+  <tr>
+    <th>{{postagem.id}}</th>
+    <th>{{postagem.titulo}}</th>
+    <th>
+      <a
+        href="http://localhost/phpmvccrud/?pagina=admin&metodo=change%id{{postagem.id}}"
+        >Alterar</a
+      >
+    </th>
+    <th>Deletar</th>
+  </tr>
+  {% endfor %}
+</table>
