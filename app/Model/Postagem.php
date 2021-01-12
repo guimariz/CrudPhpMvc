@@ -34,8 +34,6 @@
 
       $resultado = $sql->fetchObject('Postagem');
 
-      var_dump($resultado);
-
       // if(!$resultado) {
       //   throw new Exception("Não foi encontrado nenhum registro no banco.");
       // } else {
@@ -77,7 +75,6 @@
       $sql->bindValue(':tit', $params['titulo']);
       $sql->bindValue(':cont', $params['conteudo']);
       $sql->bindValue(':id', $params['id']);
-
       $resultado = $sql->execute();
 
       if($resultado == 0) {

@@ -41,19 +41,18 @@
 
     public function change($paramId) {
       $loader = new \Twig\Loader\FilesystemLoader('app/View');
-      $twig = new \Twig\Environment($loader);
-      $template = $twig->load('update.html');
+			$twig = new \Twig\Environment($loader);
+			$template = $twig->load('update.html');
 
-      $post = Postagem::selecionaPorId($paramId);
+			$post = Postagem::selecionaPorId($paramId);
 
-      $parametros = array();
-      $parametros['id'] = $post->id;
-      $parametros['titulo'] = $post->titulo;
-      $parametros['conteudo'] = $post->conteudo;
+			$parametros = array();
+			$parametros['id'] = $post->id;
+			$parametros['titulo'] = $post->titulo;
+			$parametros['conteudo'] = $post->conteudo;
 
-
-      $conteudo = $template->render($parametros);
-      echo $conteudo;
+			$conteudo = $template->render($parametros);
+			echo $conteudo;
     }
 
     public function update() {
@@ -71,10 +70,11 @@
     public function delete($paramId) {
       try{
         Postagem::delete($paramId);
-        echo '<script>alert("Publicação deletada com sucesso!");</script>';
+       
+        echo '<script>alert("'.$paramId.'");</script>';
         echo '<script>location.href="http://localhost/phpmvccrud/?pagina=admin&metodo=index"</script>';
       } catch (Exception $e) {
-        echo '<script>alert("'.$e->getMessage().'");</script>';
+        echo '<scrip;;;;;;;>alert("'.$e->getMessage().'");</scrip;;;;;;;>';
         echo '<script>location.href="http://localhost/phpmvccrud/?pagina=admin&metodo=index"</script>';
       }
 
